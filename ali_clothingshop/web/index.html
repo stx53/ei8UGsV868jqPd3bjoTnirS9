@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>impulsev</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="clothing-store">
+            <div class="store-header">
+                <div class="store-title">KLEIDUNGSLADEN</div>
+            </div>
+
+            <div class="clothing-items">
+
+                <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">T-SHIRT</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">T-SHIRT FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">OBERKÖRPER</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">OBERKÖRPER FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">ARME</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">ARME FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">WESTE</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">WESTE FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">HOSEN</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">HOSEN FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">SCHUHE</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">SCHUHE FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            
+                <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">KETTE</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">KETTE FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">ARMBÄNDER</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">ARMBÄNDER FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">TASCHE</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">TASCHE FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">AUFKLEBER</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">AUFKLEBER FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">KOPFBEDECKUNG</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">KOPFBEDECKUNG FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">BRILLE</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">BRILLE FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="clothing-item is-category">
+                    <div class="item-header" onclick="toggleItem(this)">
+                        <div class="item-icon"></div>
+                        <div class="item-name">MASKE</div>
+                        <div class="item-number"></div>
+                    </div>
+                    <div class="slider-container">
+                        <input type="number" class="slider-value" min="0" max="999" value="50">
+                        <div class="slider-controls">
+                            <div class="slider-label">0</div>
+                            <input type="range" class="slider" min="0" max="999" value="50">
+                            <div class="slider-label">999</div>
+                        </div>
+                    </div>
+                    <div class="sub-items">
+                        <div class="clothing-item">
+                            <div class="item-header" onclick="toggleSubItem(this)">
+                                <div class="item-name">MASKE FARBE</div>
+                                <div class="item-number"></div>
+                            </div>
+                            <div class="slider-container">
+                                <input type="number" class="slider-value" min="0" max="999" value="50">
+                                <div class="slider-controls">
+                                    <div class="slider-label">0</div>
+                                    <input type="range" class="slider" min="0" max="999" value="50">
+                                    <div class="slider-label">999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="purchase-section">
+                <div class="button-group">
+                    <button id="purchase-cash" class="purchase-btn" onclick="purchaseOutfit('cash', this)">BAR</button>
+                    <button id="purchase-bank" class="purchase-btn" onclick="purchaseOutfit('bank', this)">BANK</button>
+                </div>
+            </div>
+    
+            <div class="controls-hint">
+                <div class="control-hint">
+                    <div class="key-hint">RMB</div>
+                    <div>Taste halten, um umzusehen</div>
+                </div>
+                <div class="control-hint">
+                    <div class="key-hint">MMB</div>
+                    <div>Taste drücken, um die Ansicht zu ändern</div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="script.js"></script>
+    </body>
+</html>

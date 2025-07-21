@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPULSE V STREAMER MENU</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="header">
+                <img src="https://cdn.discordapp.com/attachments/1378063741756768317/1378517681736650874/Adobe_Express_-_file_3.png?ex=68515362&is=685001e2&hm=8ec51b0f3b6185ba2fd7196646b2285fbca68aadc6b046b1c723c9a362df7f8b&" alt="Server Logo" class="server-image">
+                <div class="logo">
+                    <h1>STREAMER</h1>
+                    <h2>MENÜ</h2>
+                </div>
+            </div>
+            
+            <div class="fraktionen-list scrollbar">
+                <div id="jobsList">
+                    <!-- Jobs werden dynamisch eingefügt -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="content-header">
+                <div>
+                    <h2 class="content-title">SPIELER ONLINE</h2>
+                    <p class="content-subtitle">Wähle eine Fraktion, um die Spieler zu sehen</p>
+                </div>
+                <div class="controls">
+                    <div class="control-btn" data-control="rv" title="Lebensanzeige">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="control-btn" data-control="nc" title="No-Clip">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                    <div class="control-btn" data-control="nt" title="Namen anzeigen">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <div class="control-btn" data-control="tk" title="Tötungsmodus">
+                        <i class="fas fa-skull"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="players-grid scrollbar" id="playersGrid">
+                    <div class="empty-state">
+                        <i class="fas fa-users"></i>
+                        <h3>Keine Fraktion ausgewählt</h3>
+                        <p>Klicke auf eine Fraktion, um die Spieler zu sehen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "Bebas";
+  src: url("./BebasNeue-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+}
+html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+img {
+  pointer-events: none;
+}
+img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.killchat_wrap {
+  position: absolute;
+  top: 20vw;
+  right: 0vw;
+  gap: 0.417vw;
+}
+.killchat_box {
+  border-radius: 0.313vw;
+  padding: 0.417vw 0.625vw;
+  gap: 0.208vw;
+  background: #00000075;
+  margin-right: 1vw;
+  animation: slideIn 0.5s ease;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(120%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(120%);
+  }
+}
+.kill_name {
+  gap: 0.208vw;
+}
+.kill_name_line {
+  width: 0.208vw;
+  height: 1.042vw;
+}
+.kill_name span {
+  font-size: 0.833vw;
+  font-family: Bebas;
+  color: #fff;
+}
+.kill_icon {
+  width: 1.042vw;
+  height: 1.042vw;
+}
+.w100 {
+  width: 100%;
+}
+.h100 {
+  height: 100%;
+}
+.flx {
+  display: flex;
+}
+.clmn {
+  display: flex;
+  flex-direction: column;
+}
+.alcn {
+  display: flex;
+  align-items: center;
+}
+.jlcn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flxclrt {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  flex-direction: column;
+}
+.space {
+  display: flex;
+  justify-content: space-between;
+}
+.start {
+  align-items: start;
+}
+.end {
+  align-items: end;
+}
+.top {
+  justify-content: start;
+}
+.bottom {
+  justify-content: end;
+}
+.flxcl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flxcllt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+.flxcllb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+.flxcllr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.flxcllc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

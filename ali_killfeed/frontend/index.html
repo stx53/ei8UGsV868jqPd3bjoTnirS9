@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ali_Killfeeed</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="killchat_wrap flxclrt"></div>
+
+    <script>
+      let kfIndex = 0;
+      window.addEventListener("message", async (event) => {
+        const { action, killer, victim } = event.data;
+
+        if (action === "showKillfeed") {
+          kfIndex++;
+
+          const killerHTML = killer
+            ? `
+              <div class="kill_name flx">
+                <div
+                  style="
+                    background: #63ff63;
+                    box-shadow: 0 0 0.781vw 0.052vw rgba(99, 255, 99, 0.5);
+                  "
+                  class="kill_name_line"
+                ></div>
+                <span>${killer}</span>
+              </div>
+            `
+            : "";
+
+          const html = `
+            <div class="killchat_box flx" id="${kfIndex}">
+              ${killerHTML}
+              <img class="kill_icon" src="./kill_icon.png" alt="" />
+              <div class="kill_name flx">
+                <span>${victim}</span>
+                <div
+                  style="
+                    background: #ff3f3f;
+                    box-shadow: 0 0 0.781vw 0.052vw rgba(255, 99, 99, 0.5);
+                  "
+                  class="kill_name_line"
+                ></div>
+              </div>
+            </div>
+          `;
+
+          const el = $(html).hide();
+          $(".killchat_wrap").append(el);
+          el.fadeIn(500);
+
+          setTimeout(() => {
+            el.fadeOut(500, () => el.remove());
+          }, 10000);
+        }
+      });
+    </script>
+  </body>
+</html>

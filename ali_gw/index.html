@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impulse-V Gangwar</title>
+        <link rel="stylesheet" href="style.css?v=2.9">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="war-hud" style="display: none;">
+        <div class="hud-names-row">
+            <div class="faction-name left" id="hud-f1-name">CALI</div>
+            <div class="faction-name right" id="hud-f2-name">SINALOA</div>
+        </div>
+        <div class="hud-main-row">
+            <img id="hud-f1-logo" class="faction-logo" src="" style="height: 50px; width: 50px; display: none; margin-right: 15px;">
+            <div class="stats-bar left">
+                <div id="hud-f1-progress" class="progress-bar blue" style="width: 100%;"></div>
+                <div class="player-count" id="hud-f1-count">28</div>
+            </div>
+            <div class="timer-container">
+                <div class="timer" id="hud-timer">30:00</div>
+            </div>
+            <div class="stats-bar right">
+                <img id="hud-f2-logo" class="faction-logo" src="" style="height: 50px; width: 50px; display: none; margin-left: 15px;">
+                <div id="hud-f2-progress" class="progress-bar red" style="width: 100%;"></div>
+                <div class="player-count" id="hud-f2-count">25</div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <h1><span class="green-text">IMPULSE-V</span> GANGWAR</h1>
+        </header>
+        <nav>
+            <div class="tab active" data-tab="gangwar">GANGWAR</div>
+            <div class="tab" data-tab="rewards">REWARDS</div>
+            <div class="tab" data-tab="stats">STATS</div>
+            <div class="tab" data-tab="top-player">TOP PLAYER</div>
+        </nav>
+        <main>
+            <div id="gangwar" class="tab-content active">
+                <h2 class="tab-title">FIGHTS</h2>
+                <div class="fights-grid">
+                </div>
+                <div class="gangwar-stats">
+                    <p>PUNKTE: 2010</p>
+                    <p>PLATZIERUNG: #2</p>
+                </div>
+            </div>
+
+            <div id="rewards" class="tab-content">
+                <h2 class="rewards-title">REWARD SHOP <span id="rw-points">PUNKTE: 0</span> <span id="rw-rank">PLATZIERUNG: #0</span></h2>
+                <div class="rewards-grid">
+                    <div class="reward-card">
+                        <h3>1x VISUM UP</h3>
+                        <p>250 POINTS</p>
+                        <button class="btn-buy">KAUFEN</button>
+                    </div>
+                    <div class="reward-card">
+                        <h3>1x VISUM UP</h3>
+                        <p>250 POINTS</p>
+                        <button class="btn-buy">KAUFEN</button>
+                    </div>
+                    <div class="reward-card">
+                        <h3>1x VISUM UP</h3>
+                        <p>250 POINTS</p>
+                        <button class="btn-buy">KAUFEN</button>
+                    </div>
+                    <div class="reward-card">
+                        <h3>1x VISUM UP</h3>
+                        <p>250 POINTS</p>
+                        <button class="btn-buy">KAUFEN</button>
+                    </div>
+                    <div class="reward-card">
+                        <h3>5x VISUM UP</h3>
+                        <p>1000 POINTS</p>
+                        <button class="btn-buy">KAUFEN</button>
+                    </div>
+                    <div class="reward-card">
+                        <h3>10x VISUM UP</h3>
+                        <p>3000 POINTS</p>
+                        <button class="btn-buy">KAUFEN</button>
+                    </div>
+                    <div class="reward-card">
+                        <h3>20x VISUM UP</h3>
+                        <p>6800 POINTS</p>
+                        <button class="btn-buy">KAUFEN</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="stats" class="tab-content">
+                <h2 class="tab-title">STATS</h2>
+                <div class="stats-list" id="faction-stats-list">
+                </div>
+            </div>
+
+            <div id="top-player" class="tab-content">
+                <h2 class="tab-title">TOP PLAYER</h2>
+                <div class="stats-list" id="player-stats-list">
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js?v=2.9" defer></script>
+</body>
+</html>

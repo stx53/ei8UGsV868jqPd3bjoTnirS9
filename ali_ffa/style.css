@@ -1,0 +1,574 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+body {
+    font-family: 'Russo One', sans-serif;
+    background-color: transparent;
+    color: #d1d1d1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+}
+
+/* HUD Styles */
+#ffa-hud {
+    position: fixed;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(10, 46, 20, 0.651);
+    padding: 0.625vw 1.04vw;
+    border-radius: 0.26vw;
+    display: flex;
+    font-size: 1.0vw;
+    gap: 1.04vw;
+    z-index: 1000;
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    text-shadow: 0.05vw 0.05vw 0.1vw rgba(0,0,0,0.8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.hud-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.26vw;
+    color: white;
+    font-size: 1.0vw;
+    font-weight: bold;
+}
+
+.hud-icon {
+    filter: invert(40%) sepia(93%) saturate(594%) hue-rotate(85deg) brightness(94%) contrast(92%);
+    width: 1.04vw;
+    height: 1.04vw;
+    object-fit: contain;
+    margin-right: 0.26vw;
+    vertical-align: middle;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.main-container {
+    width: 41.7vw; 
+    height: 35vw; 
+    background: linear-gradient(135deg, #2c2c2c 0%, #1b1b1b 50%, #1f1f1f 100%);
+    padding: 1.04vw; 
+    border-radius: 0.8vw; 
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(43, 43, 43, 0.2);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1.04vw; 
+}
+
+header h1 {
+    font-size: 1.25vw; 
+    margin: 0 0 0.78vw 0; 
+    letter-spacing: 0.1vw; 
+    color: #10b981;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.52vw; 
+    border-bottom: 0.05vw solid rgba(16, 185, 129, 0.3); 
+    padding-bottom: 1.04vw; 
+}
+
+.nav-btn {
+    font-family: 'Russo One', sans-serif;
+    background-color: #375146;
+    color: #d1d1d1;
+    border: 0.05vw solid rgba(16, 185, 129, 0.3); 
+    padding: 0.52vw 1.04vw; 
+    cursor: pointer;
+    font-size: 0.83vw; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.nav-btn:hover::before {
+    left: 100%;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background-color: #065f46;
+    color: #ffffff;
+    border-color: #10b981;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+}
+
+.lobby-section h2 {
+    text-align: center;
+    font-size: 1.04vw; 
+    margin: 1.04vw 0; 
+    letter-spacing: 0.05vw; 
+    color: #10b981;
+}
+
+.lobby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7.8vw, 1fr)); 
+    gap: 1.04vw; 
+    max-height: 25vw; 
+    overflow-y: auto;
+    padding-right: 0.5vw; 
+}
+
+.lobby-card {
+    background-color: #375145;
+    border: 0.05vw solid rgba(16, 185, 129, 0.3); 
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.lobby-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.lobby-card:hover::before, .map-card:hover::before {
+    opacity: 1;
+}
+
+.lobby-card:hover, .map-card:hover {
+    border-color: #10b981;
+    box-shadow: 0 8px 32px rgba(16, 185, 129, 0.25); 
+    transform: translateY(-4px) scale(1.02);
+    z-index: 10;
+    background-color: #476952;
+}
+
+.card-image {
+    padding: 1.56vw 1.52vw; 
+    border-bottom: 0.05vw solid rgba(16, 185, 129, 0.3); 
+    font-size: 0.94vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 6.25vw;
+    transition: transform 0.3s ease;
+}
+
+.lobby-card:hover .card-image img, .map-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-title {
+    padding: 0.52vw; 
+    font-size: 0.83vw; 
+}
+
+.hidden {
+    display: none !important;
+}
+
+#private-lobbies-header {
+    margin-top: 1.5vw;
+}
+
+.lobby-card {
+    position: relative; 
+}
+
+#private-section h2, #lobby-creation h2 {
+    text-align: center;
+    font-size: 1.04vw; 
+    margin: 1.04vw 0; 
+    letter-spacing: 0.05vw; 
+    color: #10b981;
+}
+
+.map-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7.8vw, 1fr)); 
+    gap: 1.04vw; 
+    max-height: 25vw; 
+    overflow-y: auto;
+    padding-right: 0.5vw; 
+}
+
+.map-card {
+    background-color: #375147;
+    border: 0.05vw solid rgba(16, 185, 129, 0.3); 
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.map-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.creation-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.78vw; 
+    margin-top: 1.56vw; 
+}
+
+#lobby-name,
+#lobby-password {
+    font-family: 'Russo One', sans-serif;
+    background-color: #375141;
+    color: #d1d1d1;
+    border: 0.05vw solid rgba(16, 185, 129, 0.3); 
+    padding: 0.52vw; 
+    width: 50%;
+    text-align: center;
+    font-size: 0.83vw; 
+    transition: all 0.3s ease;
+}
+
+#lobby-name:focus,
+#lobby-password:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    background-color: #476955;
+}
+
+#lobby-name::placeholder,
+#lobby-password::placeholder {
+    color: #a1a1a1;
+}
+
+.form-btn {
+    font-family: 'Russo One', sans-serif;
+    background-color: #375142;
+    color: #d1d1d1;
+    border: 0.05vw solid rgba(16, 185, 129, 0.3);   
+    padding: 0.52vw 1.04vw; 
+    cursor: pointer;
+    font-size: 0.83vw; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.form-btn:hover::before {
+    left: 100%;
+}
+
+.form-btn:hover {
+    background-color: #065f46;
+    color: #ffffff;
+    border-color: #10b981;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+}
+
+#stats-section h2 {
+    text-align: center;
+    font-size: 1.04vw; 
+    margin: 1.04vw 0; 
+    letter-spacing: 0.05vw; 
+    color: #10b981;
+}
+
+.scoreboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.78vw; 
+    overflow-y: auto;
+    max-height: 25vw; 
+    padding-right: 0.5vw; 
+}
+
+.player-stat-card {
+    background-color: #375142;
+    border: 0.05vw solid rgba(16, 185, 129, 0.3);
+    padding: 0.78vw; 
+    border-radius: 0.26vw; 
+    transition: all 0.3s ease;
+}
+
+.player-stat-card:hover {
+    background-color: #476959;
+    border-color: #10b981;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2);
+    transform: translateX(4px);
+}
+
+.player-name {
+    font-size: 1vw; 
+    text-align: center;
+    border-bottom: 0.05vw solid rgba(16, 185, 129, 0.3);
+    padding-bottom: 0.52vw; 
+    margin-bottom: 0.52vw; 
+    color: #10b981;
+}
+
+.player-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.26vw; 
+    font-size: 0.83vw; 
+}
+
+.stat-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-value {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.scoreboard-container::-webkit-scrollbar,
+.lobby-grid::-webkit-scrollbar,
+.map-grid::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+.scoreboard-container::-webkit-scrollbar-track,
+.lobby-grid::-webkit-scrollbar-track,
+.map-grid::-webkit-scrollbar-track {
+    background: #1f3728;    
+    border-radius: 0.26vw;
+}
+
+.scoreboard-container::-webkit-scrollbar-thumb,
+.lobby-grid::-webkit-scrollbar-thumb,
+.map-grid::-webkit-scrollbar-thumb {
+    background-color: rgba(16, 185, 129, 0.5); 
+    border-radius: 0.26vw;
+    transition: background-color 0.3s ease;
+}
+
+.scoreboard-container::-webkit-scrollbar-thumb:hover,
+.lobby-grid::-webkit-scrollbar-thumb:hover,
+.map-grid::-webkit-scrollbar-thumb:hover {
+    background-color: #10b981; 
+}
+
+.status-indicator {
+    position: absolute;
+    top: 0.5vw;
+    right: 0.5vw;
+    padding: 0.2vw 0.4vw;
+    font-size: 0.6vw;
+    border-radius: 0.2vw;
+    color: white;
+    font-weight: bold;
+}
+
+.status-indicator.private {
+    background-color: #dc2626; 
+}
+
+.status-indicator.public {
+    background-color: #059669; 
+}
+
+.lobby-actions {
+    display: none;
+    justify-content: flex-end;
+    margin-bottom: 0.52vw;
+    padding: 0 0.52vw;
+    position: absolute;
+    top: 0.52vw;
+    right: 0.52vw;
+    z-index: 1000;
+}
+
+.close-lobby-btn {
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 0.2vw 0.4vw;
+    border-radius: 0.2vw;
+    font-family: 'Russo One', sans-serif;
+    font-size: 0.5vw;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3vw;
+    box-shadow: 0 0.15vw 0 #b91c1c;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+.close-lobby-btn:hover {
+    background-color: #ef4444;
+    transform: translateY(-0.1vw) scale(1.05);
+    box-shadow: 0 0.31vw 0 #b91c1c, 0 4px 16px rgba(220, 38, 38, 0.3);
+}
+
+.close-lobby-btn:active {
+    transform: translateY(0.1vw);
+    box-shadow: 0 0.16vw 0 #b91c1c;
+}
+
+.close-lobby-btn i {
+    font-size: 1.04vw;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background-color: #2a3f2f;
+    padding: 1.5vw;
+    border-radius: 0.26vw;
+    border: 0.05vw solid rgba(16, 185, 129, 0.3);
+    text-align: center;
+    width: 25vw;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h3 {
+    font-size: 1.25vw;
+    margin: 0 0 1vw 0;
+    color: #10b981;
+}
+
+#modal-password-input {
+    font-family: 'Russo One', sans-serif;
+    background-color: #375142;
+    color: #d1d1d1;
+    border: 0.05vw solid rgba(16, 185, 129, 0.3);
+    padding: 0.52vw;
+    width: 80%;
+    text-align: center;
+    font-size: 0.83vw;
+    margin-bottom: 1vw;
+    transition: all 0.3s ease;
+}
+
+#modal-password-input:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    background-color: #476958;
+}
+
+#modal-password-input::placeholder {
+    color: #a1a1a1;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+}
+
+.cancel-btn {
+    background-color: #dc2626;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background-color: #ef4444;
+    box-shadow: 0 4px 16px rgba(220, 38, 38, 0.3);
+    transform: translateY(-2px);
+}
+
+.respawn-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(10, 46, 20, 0.144);
+    padding: 1.04vw 2.08vw;
+    border-radius: 0.52vw;
+    color: white;
+    text-align: center;
+    z-index: 1000; 
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+#respawn-timer {
+    font-size: 2.5em;
+    margin: 0;
+    text-shadow: 0.1vw 0.1vw 0.26vw rgba(0, 0, 0, 0.5);
+    color: #10b981;
+}
+
+#respawn-timer::before {
+    content: 'RESPAWN IN';
+    display: block;
+    font-size: 0.5em;
+    color: #aaa;
+    margin-bottom: 0.52vw;
+}

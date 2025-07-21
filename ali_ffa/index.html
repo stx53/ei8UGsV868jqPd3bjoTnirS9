@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFA Lobby</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>IMPULSE V FFA</h1>
+            <nav>
+                <button class="nav-btn active" data-view="LOBBYS">LOBBYS</button>
+                <button class="nav-btn" data-view="PRIVATE">PRIVATE</button>
+                <button class="nav-btn" data-view="STATS">STATS</button>
+            </nav>
+        </header>
+
+        <section class="lobby-section" style="flex-grow: 1; overflow: hidden; display: flex; flex-direction: column;">
+            <!-- Lobby Actions (wird nur für Lobby-Besitzer angezeigt) -->
+            <div id="lobby-actions" class="lobby-actions hidden">
+                <button id="close-lobby-btn" class="close-lobby-btn">
+                    <i class="fas fa-times"></i>
+                    LOBBY SCHLIESSEN
+                </button>
+            </div>
+            
+            <h2>ÖFFENTLICHE LOBBYS</h2>
+            <div class="lobby-grid" id="public-lobby-grid">
+                <!-- Beispiel Lobby-Karten -->
+                <div class="lobby-card">
+                    <div class="card-image">IMAGE</div>
+                    <div class="card-title">BERG</div>
+                </div>
+                <div class="lobby-card">
+                    <div class="card-image">IMAGE</div>
+                    <div class="card-title">BERG</div>
+                </div>
+                <div class="lobby-card">
+                    <div class="card-image">IMAGE</div>
+                    <div class="card-title">BERG</div>
+                </div>
+                <div class="lobby-card">
+                    <div class="card-image">IMAGE</div>
+                    <div class="card-title">BERG</div>
+                </div>
+                 <div class="lobby-card">
+                    <div class="card-image">IMAGE</div>
+                    <div class="card-title">BERG</div>
+                </div>
+                 <div class="lobby-card">
+                    <div class="card-image">IMAGE</div>
+                    <div class="card-title">BERG</div>
+                </div>
+            </div>
+
+            <h2 id="private-lobbies-header" class="hidden">PRIVATE LOBBYS</h2>
+            <div class="lobby-grid" id="private-lobby-grid">
+                <!-- Dynamisch erstellte Lobbys erscheinen hier -->
+            </div>
+        </section>
+
+        <section id="private-section" class="hidden">
+            <div id="map-selection">
+                <h2>WÄHLE EINE MAP</h2>
+                <div class="lobby-grid" id="map-selection-grid">
+                    <!-- Dynamisch erstellte Lobbys erscheinen hier -->
+                </div>
+            </div>
+
+            <div id="lobby-creation" class="hidden">
+                <h2>LOBBY ERSTELLEN</h2>
+                <div class="creation-form">
+                    <input type="text" id="lobby-name" placeholder="LOBBY-NAME" maxlength="20">
+                    <input type="password" id="lobby-password" placeholder="PASSWORT (LEER LASSEN FÜR ÖFFENTLICH)">
+                    <button id="create-lobby-btn" class="form-btn">ERSTELLEN</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="stats-section" class="hidden">
+            <h2>SCOREBOARD</h2>
+            <div class="scoreboard-container">
+                <!-- Player stats will be dynamically inserted here -->
+            </div>
+        </section>
+
+    </div>
+
+    <div id="password-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h3>PASSWORT EINGEBEN</h3>
+            <input type="password" id="modal-password-input" placeholder="PASSWORT">
+            <div class="modal-buttons">
+                <button id="modal-submit-btn" class="form-btn">BEITRETEN</button>
+                <button id="modal-cancel-btn" class="form-btn cancel-btn">ABBRECHEN</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="respawn-container hidden">
+        <h1 id="respawn-timer"></h1>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <!-- FFA HUD -->
+    <div id="ffa-hud" class="hidden">
+        <div class="hud-stat">
+            <img src="https://img.icons8.com/ios-filled/50/gun.png" class="hud-icon">
+            <span id="kills">0</span>
+        </div>
+        <div class="hud-stat">
+            <img src="https://img.icons8.com/glyph-neue/64/skull.png" class="hud-icon">
+            <span id="deaths">0</span>
+        </div>
+        <div class="hud-stat">
+            <img src="https://img.icons8.com/ios-filled/50/percentage2--v1.png" class="hud-icon">
+            <span id="kd-ratio">0.00</span>
+        </div>
+    </div>
+</body>
+</html>
